@@ -13,7 +13,7 @@ function CountryDetails({ data, darkMode }) {
   }, []);
 
   const loadCountry = function () {
-    console.log(countryName, "its country Name");
+   
     fetch(`https://restcountries.com/v3.1/name/${countryName}`)
       .then((res) => res.json())
       .then((data) => {
@@ -24,6 +24,7 @@ function CountryDetails({ data, darkMode }) {
         console.log(data[0], "its data maping checking");
       });
   };
+   console.log(country, "its country Name");
 
   const loadlang = (countryData) => {
     console.log(countryData, "its country data");
@@ -55,7 +56,7 @@ function CountryDetails({ data, darkMode }) {
             <img src={country.flags.png} alt="country-flag"></img>
           </div>
           <div className={`right-col ${darkMode}`}>
-            <h2>{country.name.official}</h2>
+            <h2>{country.name.common}</h2>
             <div className="country-info">
               <div className="info-left">
                 <p>
