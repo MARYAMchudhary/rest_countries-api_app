@@ -94,17 +94,18 @@ function CountryDetails({ data, darkMode }) {
             </div>
             <div className="b-c-container">
               <p>
-                <b>Border Countries:</b>
+                <b style={{marginRight:"1rem"}}>Border Countries:</b>
+
+                {!country.borders
+                  ? "No Border Country."
+                  : country.borders.map((border) => {
+                      return (
+                        <button className={`b-country-btn ${darkMode}`}>
+                          {border}
+                        </button>
+                      );
+                    })}
               </p>
-              {!country.borders
-                ? "No Border Country."
-                : country.borders.map((border) => {
-                    return (
-                      <button className={`b-country-btn ${darkMode}`}>
-                        {border}
-                      </button>
-                    );
-                  })}
             </div>
           </div>
         </div>
